@@ -281,7 +281,7 @@ void book_trip(List<Trips> trips, Passenger p){
   print('Enter trip ID: ');
   String id = stdin.readLineSync();
   int key_id = find_by_id(trips, id);
-  trips[key_id].ppl.add(p);
+
 
   if(trips[key_id].get_ppl_count() < trips[key_id].get_ppl_limit()) {
     print('Enter passenger info: ');
@@ -299,6 +299,7 @@ void book_trip(List<Trips> trips, Passenger p){
     print('Adding Passenger...');
     p.set_info(pass_id, pass_name, phone, email, national_id);
 
+    trips[key_id].ppl.add(p);
     trips[key_id].increase_ppl_count();
 
     print('Success!');
